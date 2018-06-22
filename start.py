@@ -2,8 +2,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
-@app.route('/')
+# 路由最小原则
+@app.route('/hello')
 def hello():
     return 'hello flask!'
 

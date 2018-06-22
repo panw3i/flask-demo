@@ -10,4 +10,4 @@ def hello():
 
 app.add_url_rule('/hello',view_func=hello)
 
-app.run(debug=True)
+app.run(host='0.0.0.0',debug=True)

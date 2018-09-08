@@ -1,6 +1,6 @@
 # coding:utf-8
 
-from flask import Flask
+from flask import Flask, make_response
 
 # from config import *
 
@@ -12,7 +12,17 @@ app.config.from_object('config')
 
 @app.route("/hello")
 def hello():
-    return "hello world"
+    """
+    返回的内容不是普通的字符串,而是包括了响应体
+    :return:
+    """
+    response = make_response('<h1>404?</h1>', 301)
+    response.headers = {
+        'content-type': "text/plain",
+        'location':"http://bing.com"
+    }
+
+    return response
 
 
 # 在生产环境是不会执行的,只是做为uwsgi的一个模块

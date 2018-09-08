@@ -16,9 +16,9 @@ def hello():
     返回的内容不是普通的字符串,而是包括了响应体
     :return:
     """
-    response = make_response('<h1>404?</h1>', 301)
+    response = make_response('{"a":1}', 200)
     response.headers = {
-        'content-type': "text/plain",
+        'content-type': "application/json",
         'location':"http://bing.com"
     }
 

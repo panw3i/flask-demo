@@ -9,4 +9,14 @@ def create_app():
     # 载入配置文件
     app.config.from_object('config')
 
-    return  app
+    register_blueprint(app)
+
+    return app
+
+
+def register_blueprint(app):
+
+    from app.web.book import web
+
+    # 注册蓝图
+    app.register_blueprint(web)

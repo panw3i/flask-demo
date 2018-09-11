@@ -1,8 +1,7 @@
 # coding:utf-8
 from flask import jsonify, app, Blueprint
 
-# 定义蓝图
-web = Blueprint('web', __name__);
+from . import web
 
 
 # 使用蓝图

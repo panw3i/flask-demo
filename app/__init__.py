@@ -16,7 +16,7 @@ def create_app():
 
 def register_blueprint(app):
 
-    from app.web.book import web
+    from app.web import web
 
     # 注册蓝图
     app.register_blueprint(web)
